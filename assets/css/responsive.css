@@ -1,0 +1,312 @@
+/*	Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width:1100px) {
+.skills-wrapper, 
+.about-wrapper,
+.services-wrapper, 
+.experiences-wrapper, 
+.portfolio-wrapper, 
+.blog-wrapper, 
+.testimonials-wrapper, 
+.contact-wrapper {
+    padding: 0px 0px;
+}
+.themeix-nav-logo {
+    display:none;
+}
+#about,
+#skills,
+#services,
+#experiences,
+#portfolio,
+#blog,
+#testimonials,
+#contact{
+	padding-top:50px;
+	padding-bottom:30px;
+}
+.pd-0{
+	padding-bottom:0 !important;
+}
+.pt-30{
+	padding-top:70px !important;
+}
+.about-wrapper .col-md-6 {
+    -ms-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+            flex: 0 0 100%; 
+     max-width: 100%;
+}
+#about {
+    
+}
+.about-content {
+    padding-bottom: 50px;
+}
+.about {
+    background-size: 85%;
+}
+.themeix-aside {
+    width: 200px;
+    z-index: 111;
+    left: -145px;
+    -webkit-transition:1s all;
+    transition: 1s all;
+}
+.control-bar {
+    display:block;
+}
+
+.active-menu{
+	 left: 0px;
+}
+.themeix-main-content {
+    width: 100%;
+	padding-left: 55px;
+}
+.skills-box:before {
+    bottom: -20px;
+    height: 15px;
+}
+.skills-flower-image img {
+    max-width: 230px;
+}
+.skills-project-box:before {
+    bottom: -20px;
+    height: 10px;
+}
+.services-flower-image img {
+    max-width: 230px;
+}
+.services-project-box:before {
+    bottom: -20px;
+    height: 9px;
+}
+.testimonials-author:before {
+    bottom: -8px;
+    height: 17px;
+}
+.contact-form h3 {
+    width: 100%;
+}
+.experiences-info-wrapper .experiences-datetime {
+    display: none;
+}
+.experiences-info-wrapper p {
+    margin: 0px;
+    padding-right:0px;
+}
+.single-blog-content {
+    padding: 10px;
+}
+.contact-form form {
+    padding: 30px;
+}
+.portfolio-item .portfolio-overlay {
+    padding-top: 85px;
+}
+.homepage-copyright{
+	display:none;
+}
+.active-menu .homepage-copyright{
+	display:block;
+}
+#background-wrap{
+	display:none;
+}
+.contact{
+	background-image:none;
+}
+}
+
+
+/*	Mobile Layout: 420px.  */
+
+@media only screen and (max-width: 767px) {
+.skills-wrapper, 
+.about-wrapper,
+.services-wrapper, 
+.experiences-wrapper, 
+.portfolio-wrapper, 
+.blog-wrapper, 
+.testimonials-wrapper, 
+.contact-wrapper {
+    padding: 0px 0px;
+}
+#about {
+    background-image:none;
+}
+.about-wrapper .col-md-6 {
+    -ms-flex: 0 0 100%;
+    -webkit-box-flex: 0;
+            flex: 0 0 100%; 
+     max-width: 100%;
+}
+.about-content {
+    padding-bottom: 50px;
+    padding-top: 30px;
+}
+.about {
+    background-size: 85%;
+}
+.themeix-aside {
+    width: 200px;
+    z-index: 111;
+    left: -145px;
+    -webkit-transition:1s all;
+    transition: 1s all;
+}
+.control-bar {
+    display:block;
+}
+
+.active-menu{
+	 left: 0px;
+}
+.themeix-main-content {
+    width: 100%;
+	padding-left: 55px;
+}
+.skills-box:before {
+    bottom: -32px;
+    height: 35px;
+}
+.skills-flower-image img {
+    max-width: 230px;
+}
+.skills-project-box:before {
+    bottom: -20px;
+    height: 10px;
+}
+.services-flower-image img {
+    max-width: 230px;
+}
+.services-project-box:before {
+    bottom: -20px;
+    height: 9px;
+}
+.testimonials-author:before {
+    bottom: -10px;
+    height: 25px;
+}
+.work-history-wrapper{
+	margin-bottom:30px;
+}
+.contact-form h3 {
+    width: 100%;
+}
+.homepage-copyright{
+	display:none;
+}
+.active-menu .homepage-copyright{
+	display:block;
+}
+.skills-project-box {
+    padding: 40px 20px;
+}
+.services-box {
+    padding: 60px 20px 30px;
+    margin-bottom: 40px;
+}
+.services-project-box {
+    padding: 40px 20px;
+}
+.experiences-info-wrapper .experiences-datetime {
+    position: relative;
+    right: 0px;
+	top:0px;
+	margin-bottom:20px;
+}
+.experiences-info-wrapper p {
+    padding-right:0px;
+}
+.experiences-info-wrapper .experiences-datetime::before {
+    display:none;
+}
+.single-blog-content {
+    padding: 25px;
+}
+.testimonials-author-img {
+    width: 80px;
+    height: auto;
+}
+.testimonials-author-info {
+    width: calc(100% - 80px);
+}
+.contact-form form {
+    padding: 20px;
+}
+.section-title .border-center{
+	display:none;
+}
+.skills-project-box .skills-project-btn {
+    padding: 10px 10px;
+}
+.services-project-box .skills-project-btn {
+    padding: 10px 10px;
+}
+.experiences-info-wrapper {
+    padding: 25px;
+}
+#about,
+#skills,
+#services,
+#experiences,
+#portfolio,
+#blog,
+#testimonials,
+#contact{
+	padding-top:30px;
+	padding-bottom:30px;
+}
+.pt-30{
+	padding-top:70px!important;
+}
+.portfolio-item{
+	width:100%;
+}
+.active-menu .themeix-nav-logo{
+	display:block;
+}
+.themeix-nav-logo{
+	display:none;
+}
+#background-wrap{
+	display:none;
+}
+.contact{
+	background-image:none;
+}
+}
+
+@media only screen and (max-width: 576px) {
+    .experiences-title-box,
+    .experiences-title p {
+        float:none;
+        margin:0 auto;
+    }
+    .experiences-title {
+        padding:20px 0;
+    }
+   
+   .experiences-info-wrapper h3 {
+    font-size:20px;
+   }
+   .about-content span {
+    font-size:45px;
+   }
+}
+
+@media only screen and (max-width:767px) {
+
+    .skills-wrapper h2 {
+        font-size:30px;
+    }
+    .about-content h1 {
+       font-size:30px;
+    }
+    .portfolio-wrapper h2 {
+        font-size:30px;
+    }
+}
+

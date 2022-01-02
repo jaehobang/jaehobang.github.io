@@ -1,0 +1,14 @@
+- year: 2006-2017
+  logo: assets/images/facebook.png
+  url: http://facebook.com
+  desc: Facebook Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut commodi earum eligendi ipsum, laborum maiores mollitia.
+
+- year: 1998-2000
+  logo: assets/images/google.png
+  url: http://google.com
+  desc: Google Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut commodi earum eligendi ipsum, laborum maiores mollitia.
+
+- year: 1999-2003
+  logo: assets/images/envato.png
+  url: http://envato.com
+  desc: Envato Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aut commodi earum eligendi ipsum, laborum maiores mollitia.

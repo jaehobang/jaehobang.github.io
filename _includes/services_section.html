@@ -1,0 +1,29 @@
+<!-- Start Services -->
+<section class="full-page clearfix" id="services">
+    <div class="services">
+        <div class="container-fluid">
+            <div class="services-wrapper text-center">
+                <div class="section-title">
+                    <div class="border-center"></div>
+                    <h2>my services list</h2>
+                    <div class="border-center"></div>
+                </div>
+                <div class="row">
+                    {% for services_data in site.data.services %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="services-box wow fadeIn text-center">
+                         <a href="#"><div class="services-box-logo"><img src="{{services_data.icon | relative_url}}" alt="services logo"/></div></a>
+                            <h5>{{services_data.title}}</h5>
+                            <p>{{services_data.desc}}</p>
+                        </div>
+                     </div>
+                    {% endfor %}
+                  </div>
+                <div class="project-promo">
+                    {% include project_promotions.html %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services -->

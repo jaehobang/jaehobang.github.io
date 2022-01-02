@@ -1,0 +1,27 @@
+- name: Kimberly
+  designation: ux/ui designer
+  image: assets/images/author-img.png
+  url: http://themeix.com
+  rating: 80%
+  desc: Very Awesome And Loremlacus potenti, perferendis officia. Eros. Nulla, leo numquam arcu incididunt, temporibus dolor! Et beatae duis laborum a lectus explicabo iste.
+  
+- name: Robert Hamja
+  designation: Graphic Designer
+  image: assets/images/author-2.png
+  url: http://themeix.com
+  rating: 50%
+  desc: Graphic Desinging vel velit hymenaeos magna vestibulum facilisi, aliquam leo purus sit, lacus pede quasi.Risus natoque, reiciendis quod veritatis deleniti aliquet.
+
+- name: Julfiker Ali
+  designation: SEO Expert
+  image: assets/images/author-3.png
+  url: http://themeix.com
+  rating: 75%
+  desc: Illo egestas inceptos eligendi, hymenaeos inventore! Modi odio eleifend aliquip, nunc pellentesque? Do incidunt nullam egestas nullam iaculis enim, quos accusamus.
+
+- name: Hasnat Khan
+  designation: Marketer
+  image: assets/images/author-4.png
+  url: http://themeix.com
+  rating: 100%
+  desc: Corporis ac pretium inceptos mollitia nostrum? Nec repellat, mollis suscipit pariatur vivamus aliquam vel dolores ipsa facere nihil iusto pede, viverra urna nonummy eget.

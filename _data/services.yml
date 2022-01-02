@@ -1,0 +1,23 @@
+- title: Adobe Photoshop
+  desc: Lorem ipsum dolor sit amet, augue lacus duis aliquam interdum morbi, justo sequi eget nulla nec, dignissim
+  icon: assets/images/services-icon-brush.png
+
+- title: Javascript
+  desc: Lorem ipsum dolor sit amet, augue lacus duis aliquam interdum morbi, justo sequi eget nulla nec, dignissim
+  icon: assets/images/services-icon-java.png
+  
+- title: HTML5 And CSS3
+  desc: Lorem ipsum dolor sit amet, augue lacus duis aliquam interdum morbi, justo sequi eget nulla nec, dignissim
+  icon: assets/images/services-icon-coding.png
+
+- title: Web design
+  desc: Lorem ipsum dolor sit amet, augue lacus duis aliquam interdum morbi, justo sequi eget nulla nec, dignissim
+  icon: assets/images/services-icon-layer.png
+
+- title: Back-end Development
+  desc: Lorem ipsum dolor sit amet, augue lacus duis aliquam interdum morbi, justo sequi eget nulla nec, dignissim
+  icon: assets/images/services-icon-mouse.png
+
+- title: Adobe illustrator
+  desc: Lorem ipsum dolor sit amet, augue lacus duis aliquam interdum morbi, justo sequi eget nulla nec, dignissim
+  icon: assets/images/services-icon-pen.png

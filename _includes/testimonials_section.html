@@ -1,0 +1,44 @@
+ <!-- Start Testimonials -->
+    <section class="full-page pd-0 clearfix" id="testimonials">
+        <div class="testimonials">
+            <div class="container-fluid">
+                <div class="testimonials-wrapper text-center">
+                    <div class="section-title">
+                        <div class="border-center"></div>
+                        <h2>testimonials</h2>
+                        <div class="border-center"></div>
+                    </div>
+                    <div class="row">
+                       {% for review_info in site.data.testimonials %}
+                        <div class="col-md-6 col-sm-12">
+                            <div class="testimonials-author  wow fadeIn">
+                                <div class="testimonials-author-wrapper">
+                                    <div class="testimonials-author-img float-left">
+                                        <img src=" {{review_info.image | relative_url}}" alt="{{review_info.name}}"/>
+                                    </div>
+                                    <div class="testimonials-author-info float-left text-left">
+										<div class="rating-containerdiv">
+    <div>
+    <img src=" {{'/assets/images/stars_blank.png' | relative_url}}" alt="img">
+    </div>
+    <div class="rating-cornerimage" style="width:{{review_info.rating}};">
+    <img src=" {{'/assets/images/stars_full.png' | relative_url}}" alt="">
+    </div>
+</div><div class="clearfix"></div>
+									<p>{{review_info.desc}}</p>
+                                        <div class="author-info">
+                                            <a href="{{review_info.url}}"><span class="author-name"> {{review_info.name}}</span></a>
+                                            <br/>
+                                            <span class="author-frofess">{{review_info.designation}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Testimonials  -->

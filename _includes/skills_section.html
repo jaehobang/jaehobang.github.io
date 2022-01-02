@@ -1,0 +1,33 @@
+<!-- Start Skills  -->
+<section class="full-page pt-30 clearfix" id="skills">
+    <div class="skills">
+        <div class="container-fluid">
+            <div class="skills-wrapper text-center">
+                <div class="section-title">
+                    <h2>MY TECHNICAL SKILL</h2>
+                    <div class="border-center"></div>
+                </div>
+                <div class="row">
+                    {% for skills_data in site.data.skills  %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="skills-box wow fadeIn text-center">
+                            <h5>{{skills_data.title}}</h5>
+                            <p>{{skills_data.desc}}</p>
+                            <div class="progressbar-main">
+                                <div class="progress">
+                                 <div class="progress-bar  active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width:{{skills_data.progress}}"></div>
+                                </div>
+                                <span class="progress-percentage">{{skills_data.progress}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                   </div>
+                   <div class="project-promo">
+                    {% include project_promotions.html %}   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Skills -->

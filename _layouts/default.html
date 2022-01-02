@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html lang="zxx">
+<head>
+    <!-- meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% seo %}
+    <!--call favicon icon-->
+    <link rel="icon" href="{{'/assets/images/favicon.png' | relative_url}}" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="{{'/assets/css/bootstrap.min.css' | relative_url}}"/>
+    <link rel="stylesheet" href="{{'/assets/css/font-awesome.min.css' | relative_url}}"/>
+    <link rel="stylesheet" href="{{'/assets/css/lightbox.min.css' | relative_url}}"/>
+    <link rel="stylesheet" href="{{'/assets/css/animate.css' | relative_url}}"/>
+    <link rel="stylesheet" href="{{'/assets/css/style.css' | relative_url}}"/>
+    <link rel="stylesheet" href="{{'/assets/css/responsive.css' | relative_url}}"/> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:300,400,700&display=swap" rel="stylesheet">
+	
+	{% feed_meta %}
+</head>
+
+<body data-spy="scroll" data-target=".navbar-scrolled" data-offset="0" class="scrollspy-example loading">
+    {% include header.html %}
+
+     {{ content }}
+
+    <!-- Start Loading ===================================-->
+    <div class="loading">
+        <div class="sk-folding-cube">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+    </div>
+    <!-- End Loading ==================-->
+     <script src="{{'/assets/js/jquery.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/popper.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/bootstrap.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/jquery.easing.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/isotope.pkgd.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/lightbox.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/macy.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/jquery.nicescroll.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/wow.min.js' | relative_url}}"></script>
+     <script src="{{'/assets/js/custom.js' | relative_url}}"></script>
+	 
+ 
+ 
+</body>
+</html>
