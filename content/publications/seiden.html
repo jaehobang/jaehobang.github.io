@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Seiden: Revisiting Query Processing in Video Database Systems</title>
+  <link rel="stylesheet" href="../css/homepage.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Seiden: Revisiting Query Processing in Video Database Systems</h1>
+    <p><strong>Short Description:</strong> This paper introduces Seiden, a novel approach to video database query processing that rethinks the architecture for efficient and scalable video analytics. The work demonstrates how modern systems can support complex video queries with improved performance and flexibility, enabling new applications in large-scale video data management.</p>
+    <a href="https://par.nsf.gov/servlets/purl/10483716">Read the full paper</a>
+    <hr>
+    <h2>Seiden: A New Approach to VDBMS</h2>
+    <p>The document discusses the Seiden video database management system (VDBMS), which improves query processing in video databases by leveraging recent advancements in oracle models, making them faster and more accurate than traditional proxy models.</p>
+    <p><strong>Seiden</strong> is a video database management system that utilizes lightweight oracle models to enhance query processing efficiency and accuracy. Seiden leverages recent advancements in computer vision, particularly lightweight oracle models like Yolov5s, which have comparable or faster inference times than traditional proxy models.</p>
+    <ul>
+      <li>Constructs a query-agnostic index by applying the oracle model to a subset of frames, specifically I-frames, during the index construction phase.</li>
+      <li>Employs an exploration-exploitation scheme during query execution to sample additional frames, improving query accuracy and processing speed.</li>
+      <li>Empirical evaluations show that Seiden is on average 6.6 times faster than state-of-the-art (SoTA) VDBMSs across various queries and datasets.</li>
+    </ul>
+    <h3>Limitations of Existing VDBMS</h3>
+    <ul>
+      <li>Current video database management systems rely on proxy models that are now less efficient due to advancements in oracle models.</li>
+      <li>SoTA VDBMSs typically use lightweight proxy models, such as Resnet-18, to filter frames before passing them to heavier oracle models like Mask R-CNN.</li>
+      <li>The assumption that proxy models are significantly faster than oracle models is no longer valid, as models like Yolov5s are faster and more accurate.</li>
+      <li>The inference time of Yolov5s is 11.2 times faster than Mask R-CNN, challenging the effectiveness of proxy-based systems.</li>
+    </ul>
+    <h3>Index Construction and Query Execution</h3>
+    <ul>
+      <li>The index construction phase involves sampling I-frames and running the oracle model to create a key-value index of oracle labels.</li>
+      <li>The query execution phase uses a multi-armed bandit approach to adaptively sample additional frames based on the query's requirements.</li>
+      <li>The system balances exploration of less-sampled segments and exploitation of segments with higher expected rewards to optimize query results.</li>
+    </ul>
+    <h3>Query Processing Techniques</h3>
+    <ul>
+      <li>For aggregate queries, Seiden uses the aggregate optimizer from Blazeit, ensuring that the error bound is within specified limits (e.g., error &lt; 0.2 with 95% confidence).</li>
+      <li>For retrieval queries, it utilizes the importance sampling algorithm from Supg to confirm that the accuracy constraints are met.</li>
+      <li>The system's design allows for efficient label propagation, leveraging the temporal continuity of video frames to assign proxy labels to unsampled frames.</li>
+    </ul>
+    <h3>Empirical Evaluation and Results</h3>
+    <ul>
+      <li>Seiden demonstrates significant improvements in query processing speed and accuracy compared to existing systems.</li>
+      <li>The empirical evaluation indicates that Seiden is 84.8 times faster than Yolov5 in index construction.</li>
+      <li>It achieves a mean average precision (mAP) score of 0.4 for car detection, outperforming Mask R-CNN, which has an mAP of 0.37.</li>
+      <li>The overall design and implementation of Seiden lead to faster query processing times while ensuring that user-defined accuracy constraints are satisfied.</li>
+    </ul>
+    <h3>MAB Sampling and Label Propagation in Seiden</h3>
+    <ul>
+      <li>Seiden employs a multi-armed bandit (MAB) sampling approach to select video segments for label propagation based on uncertainty.</li>
+      <li>Constructs video segments (arms) using selected anchors.</li>
+      <li>Selects segments with the maximum Upper Confidence Bound (UCB) score for sampling.</li>
+      <li>The oracle model is run on sampled frames until the sampling budget is exhausted.</li>
+      <li>Label propagation uses temporal distance as a metric to assign labels to non-sampled frames.</li>
+      <li>Temporal linear interpolation is effective and inexpensive for generating proxy labels.</li>
+    </ul>
+    <h3>Ineffective Features for Proxy Labeling</h3>
+    <ul>
+      <li>The study evaluates various features for generating proxy labels and finds them ineffective compared to the oracle model.</li>
+      <li>Features examined include frame byte size, pixel values, and deep features from Resnet-18.</li>
+      <li>None of the features met the dual constraints of speed and accuracy for proxy labeling.</li>
+      <li>Frame byte size showed a correlation of 0.014 with label changes, while pixel difference had a correlation of 0.134.</li>
+      <li>Deep features from Resnet-18 had a correlation of 0.274, but still insufficient for effective sampling.</li>
+      <li>A need for faster and more accurate proxy models is highlighted.</li>
+    </ul>
+    <h3>Evaluation of Seiden's Performance</h3>
+    <ul>
+      <li>Seiden's performance is evaluated against state-of-the-art (SoTA) video database management systems (VDBMSs) across various metrics.</li>
+      <li>The evaluation addresses multiple research questions (RQs) regarding index construction time, execution time, and accuracy.</li>
+      <li>Seiden is on average 6.6× faster than SoTA VDBMSs while maintaining comparable accuracy.</li>
+      <li>It demonstrates superior performance in aggregate queries and retrieval queries across five datasets.</li>
+      <li>The datasets include Cherry, UA-DETRAC, Dashcam, and Jackson, with varying object selectivity percentages.</li>
+    </ul>
+    <h3>Index Construction Time Comparison</h3>
+    <ul>
+      <li>Seiden's index construction time is significantly faster than that of other systems.</li>
+      <li>Seiden is 87X faster than tasti-pt due to its efficient anchor selection process.</li>
+      <li>The index construction time increases linearly with the number of anchors in Seiden.</li>
+      <li>SVM and Resnet-18 models have non-trivial training overheads, making them slower.</li>
+      <li>On the Cherry dataset, Seiden is 422× faster than tasti-pt with a 0.1% sampling budget.</li>
+    </ul>
+    <h3>Aggregate Query Execution Time</h3>
+    <ul>
+      <li>Seiden excels in executing aggregate queries compared to other systems.</li>
+      <li>Seiden is 2.4× faster than SVM, 1.4× faster than Resnet-18, and 1.08× faster than tasti-pt on average.</li>
+      <li>The performance gap is most pronounced on the UA-DETRAC dataset due to its high object selectivity (94%).</li>
+      <li>Resnet-18 provides more accurate proxy scores than SVM, leading to fewer oracle invocations.</li>
+    </ul>
+    <h3>Retrieval Query Execution Performance</h3>
+    <ul>
+      <li>Seiden achieves high F1-scores in retrieval queries, outperforming other systems.</li>
+      <li>On precision queries, Seiden's F1-score is on average 95%, 34%, and 3% higher than SVM, Resnet-18, and tasti-pt, respectively.</li>
+      <li>On recall queries, Seiden's F1-score is 32%, 52%, and 4% higher than SVM, Resnet-18, and tasti-pt, respectively.</li>
+      <li>The Dashcam dataset presents challenges due to moving backgrounds, affecting SVM's performance.</li>
+    </ul>
+    <h3>Impact of Anchor Sampling Ratio</h3>
+    <ul>
+      <li>The anchor sampling ratio (𝛼) significantly influences query accuracy and execution time.</li>
+      <li>For aggregate queries, optimal 𝛼 values are greater than 80%, favoring exploration.</li>
+      <li>For precision queries, optimal 𝛼 values range from 40% to 60%, indicating a balance between exploration and exploitation.</li>
+      <li>Increased sampling budgets reduce the impact of 𝛼 on accuracy.</li>
+    </ul>
+    <h3>MAB Sampling Parameter Effects</h3>
+    <ul>
+      <li>The MAB sampling parameter (𝑐) affects the balance between exploration and exploitation in Seiden.</li>
+      <li>Optimal 𝑐 values for aggregate queries range from 3 to 4, favoring exploration.</li>
+      <li>For precision queries, optimal 𝑐 values range from 2 to 3, indicating a need for balance.</li>
+      <li>High sampling budgets diminish the impact of 𝑐 on accuracy.</li>
+    </ul>
+    <h3>Oracle Label Reuse Across Queries</h3>
+    <ul>
+      <li>Seiden effectively reuses oracle labels across multiple queries, enhancing accuracy.</li>
+      <li>In a sequence of precision queries, Seiden reuses oracle labels from previous queries.</li>
+      <li>Seiden's F1-scores are higher than tasti-pt's by 8% and 29% on Cherry and Dashcam datasets, respectively.</li>
+    </ul>
+    <h3>Impact of Label Interpolation Scheme</h3>
+    <ul>
+      <li>Different label interpolation schemes are evaluated for their impact on execution time and accuracy.</li>
+      <li>Temporal distance interpolation is both fast and accurate, requiring less computation than other schemes.</li>
+      <li>Other schemes, such as pixel and Resnet-18 feature distances, require significant computation time.</li>
+      <li>The F1-score differences among interpolation schemes are minimal, with a maximum difference of less than 0.02.</li>
+    </ul>
+  </div>
+</body>
+</html>

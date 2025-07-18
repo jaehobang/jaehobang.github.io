@@ -6,122 +6,103 @@
   <link rel="stylesheet" href="css/homepage.css">
 </head>
 <body>
-  <div class="main-container">
+  <div style="display: flex; max-width: 1100px; margin: 40px auto;">
+    <!-- Left column navigation -->
+    <nav style="width: 220px; margin-right: 32px; flex-shrink: 0; position: sticky; top: 32px; align-self: flex-start; background: #f8f9fa; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); padding: 24px 18px; font-size: 1.08em;">
+      <div style="font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px; color: #333;">Navigate</div>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 10px;"><a href="../index.html">Home</a></li>
+        <li style="margin-bottom: 10px;"><a href="resume.html" style="font-weight: bold; color: #2a5d9f;">Resume</a></li>
+        <li style="margin-bottom: 10px;"><a href="../content/ai/ai_main.html">Blog - AI</a></li>
+        <li><a href="../content/investing/investing_main.html">Blog - Finance</a></li>
+      </ul>
+    </nav>
+    <div class="main-container" style="flex:1; padding-top:40px;">
     <h1>Profile</h1>
     <div class="card">
-      <p>Currently, I am an AI Compiler Engineer contributing to making world-class NPU (neural processing units) at Rebellions Inc. </p>
-      <p>Previously, during my Ph.D. years, I've done 4+ years of research in autonomous video analytics, computer vision, explainable AI and deep learning. Research expertise in unsupervised domain adaptation, unsupervised feature extraction, and explaining Deep Learning Models.</p>
-      <p>Expert in Python / Pytorch / C++.</p>
+      <p>I am a deep learning specialist focused on building efficient computational primitives that enable state-of-the-art neural networks to run optimally on custom hardware at Rebellions Inc. My work bridges the gap between advanced AI research and high-performance deployment, ensuring that modern deep learning models are both powerful and practical on next-generation NPUs.</p>
+      <p>My research background centers on applying deep learning to solve real-world problems, from autonomous video analytics and computer vision to explainable AI. I have a proven track record of leveraging the latest advances in neural networks to deliver impactful, production-ready solutions.</p>
+      <p><strong>Technical skills:</strong> Python, PyTorch, C++</p>
+    </div>
+
+    <h1>Professional Experience</h1>
+    <div class="card">
+      <div style="font-family: 'Segoe UI Semibold', 'Segoe UI', Arial, sans-serif; font-size: 1.18em; font-weight: 600; margin-bottom: 6px;">
+  Software Engineer, Rebellions Inc. — South Korea (01.2023 – Present)
+</div>
+<ul>
+  <li>
+    Developed high-performance primitives for a custom NPU, enabling deployment of state-of-the-art deep learning models by mapping framework-level ops to hardware-specific kernels with minimal overhead.
+  </li>
+  <li>
+    Owned the implementation of ~20% of all primitives across the compiler stack, specializing in memory-intensive ops like pooling and layout transforms; applied tiling, fusion, and instruction-level optimizations to maximize throughput.
+  </li>
+  <li>
+    Architected and maintained the C++ primitive infrastructure, introducing reusable base classes, shared scheduling logic, and hardware abstraction layers—reducing code duplication and cutting integration time for new ops by 40%.
+  </li>
+</ul>
+<p><strong>Skills:</strong> C++, Python, PyTorch, Deep Learning Compiler Design, Hardware-Aware Optimization</p>
+
     </div>
     <h1>Education</h1>
     <div class="card">
       <ul>
-        <li>Georgia Institute of Technology, Ph.D. in Computer Science. GPA 3.75 / 4.00 (August 2018 — ON LEAVE)</li>
-        <li>Carnegie Mellon University, M.S, B.S in Computer Engineering. GPA 3.88 / 4.00, 3.76 / 4.00 (August 2013 — August 2017)</li>
+        <li><strong>Georgia Institute of Technology</strong> — Ph.D. in Computer Science (on leave), GPA: 3.75/4.00 (08.2018 – Present)</li>
+        <li><strong>Carnegie Mellon University</strong> — M.S. & B.S. in Computer Engineering, GPA: 3.88/4.00 (MS), 3.76/4.00 (BS) (08.2013 – 08.2017)</li>
       </ul>
     </div>
-    <h1>Publications and Patents</h1>
+    <h1>Publications</h1>
     <div class="card">
       <ul>
         <li>
-          <strong>Seiden: Revisiting query processing in video database systems</strong><br>
-          Proceedings of the VLDB Endowment 16.9 · 2023<br>
+          <strong>Seiden: Revisiting Query Processing in Video Database Systems</strong><br>
+          Proceedings of the VLDB Endowment 16.9, 2023<br>
           Bang, Jaeho, et al.<br>
-          <a href="https://par.nsf.gov/servlets/purl/10483716">Paper Link</a>
+          <a href="https://par.nsf.gov/servlets/purl/10483716">Read Paper</a> | <a href="publications/seiden.html">Read Blog</a>
         </li>
         <li>
           <strong>Interpretable Unsupervised Log Anomaly Detection</strong><br>
-          2023 IEEE International Conference on Big Data (BigData) · IEEE, 2023<br>
+          IEEE International Conference on Big Data (BigData), 2023<br>
           Bang, Jaeho, et al.<br>
-          <a href="https://ieeexplore.ieee.org/iel7/10385234/10386078/10386852.pdf?casa_token=dkoqRUQSw_sAAAAA:8VEn0M5lQ1Mv4KigMH19RUS2J5kp1ODqnmuSEKZWdeI042FalteSM_IbtW2N4P-zqNu3780eEbY">Paper Link</a>
+          <a href="https://ieeexplore.ieee.org/iel7/10385234/10386078/10386852.pdf?casa_token=dkoqRUQSw_sAAAAA:8VEn0M5lQ1Mv4KigMH19RUS2J5kp1ODqnmuSEKZWdeI042FalteSM_IbtW2N4P-zqNu3780eEbY">Read Paper</a> | <a href="publications/log_anomaly.html">Read Blog</a>
         </li>
         <li>
-          <strong>Zeus: Efficiently localizing actions in videos using reinforcement learning</strong><br>
-          SIGMOD '22: Proceedings of the 2022 International Conference on Management of Data · Jun 2, 2022<br>
-          <a href="https://dl.acm.org/doi/10.1145/3514221.3526181">Paper Link</a>
+          <strong>Zeus: Efficiently Localizing Actions in Videos Using Reinforcement Learning</strong><br>
+          SIGMOD '22: Proceedings of the 2022 International Conference on Management of Data, June 2022<br>
+          <a href="https://dl.acm.org/doi/10.1145/3514221.3526181">Read Paper</a> | <a href="publications/zeus.html">Read Blog</a>
         </li>
         <li>
           <strong>Human Interaction Through an Optimal Sequencer to Control Robotic Swarms</strong><br>
-          IEEE International Conference on Systems, Man, and Cybernetics (SMC) · Oct 7, 2018<br>
-          <a href="http://d-scholarship.pitt.edu/36822/1/Li-smc.pdf">Paper Link</a>
+          IEEE International Conference on Systems, Man, and Cybernetics (SMC), Oct 2018<br>
+          <a href="http://d-scholarship.pitt.edu/36822/1/Li-smc.pdf">Read Paper</a> | <a href="publications/smc_swarm.html">Read Blog</a>
         </li>
       </ul>
     </div>
-    <h1>Employment History</h1>
-    <div class="card">
-      <h2>AI Compiler Engineer at Rebellions Inc, South Korea (Jan 2023 - Current)</h2>
-      <p>Pertinent Skills: C++, Python, Pytorch</p>
-      <ul>
-        <li>Design interface and logic used for interacting between Compiler and Primitive Library</li>
-        <li>Implement deep learning model primitives (such as Dense, Conv2d operators) that run optimally on Rebellions Hardware.</li>
-      </ul>
+
+    <h1>Internships</h1>
+        <div class="card">
+        <div style="margin-bottom: 10px;">
+            <span style="font-size:1.05em; font-weight:600;">Research Intern, Adobe Research — San Jose, CA (05.2022 – 08.2022)</span><br>
+            <span>Designed a label-free anomaly detection system for semi-structured logs using custom Grid Transformers, achieving a 20% improvement in detection accuracy over baseline Transformer models; adapted Grad-CAM for interpretability in textual log data.</span>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <span style="font-size:1.05em; font-weight:600;">Research Intern, Kakaobrain — South Korea (04.2018 – 07.2018)</span><br>
+            <span>Enhanced face detection accuracy by 2.9% over SSD through anchor optimization, low-layer feature proposals, and background-label balancing using a novel max-out strategy; deployed using TensorFlow for real-time inference pipelines.</span>
+        </div>
+
+        <div style="margin-bottom: 10px;">
+            <span style="font-size:1.05em; font-weight:600;">Research Assistant, Advanced Agents Lab — Pittsburgh, PA (01.2017 – 03.2018)</span><br>
+            <span>Co-authored an IEEE SMC publication on human-swarm interaction; built a ROS/C++ system with Qt5 and librviz for interactive control of robotic swarms and accelerated CUDA-based A* path planning by 300× over serial implementation.</span>
+        </div>
+
+        <div style="margin-bottom: 0;">
+            <span style="font-size:1.05em; font-weight:600;">Software Engineering Intern, Charles River Development — Burlington, MA (06.2015 – 08.2015)</span><br>
+            <span>Shipped backend-to-frontend changes for a new portfolio risk calculation model using exponential decay, working in Java, SQL, and Excel-based reporting workflows across Agile sprint cycles.</span>
+        </div>
     </div>
-    <div class="card">
-      <h2>Internship at Adobe Research, San Jose, CA (May 2022 — August 2022)</h2>
-      <p>Pertinent Skills: Python, Pytorch, semi-structured data, explainable AI, Deep Learning</p>
-      <ul>
-        <li>LADI: Log Anomaly Detection and Interpretation Using Unsupervised Methods</li>
-        <li>Novel approach to detecting log anomalies and generating model explanations without any labels</li>
-        <li>Developed Grid Transformers to improve anomaly detection accuracies over traditional Transformers by on average 20%.</li>
-        <li>Adaptation of network attention visualization outlined in Grad-CAM to textual data.</li>
-      </ul>
+
     </div>
-    <div class="card">
-      <h2>Ph.D. Candidate at Georgia Institute of Technology, Atlanta, GA (Aug 2018 — Dec 2022)</h2>
-      <p>Pertinent Skills: Python, Pytorch, deep learning, image classification, object detection, clustering, unsupervised domain adaptation, meta-learning, deep RL</p>
-      <ul>
-        <li>SEIDEN: Query Agnostic Index for Video Analytics (1st CoAuthor - Under Revision at VLDB 2023)
-          <ul>
-            <li>Utilized hierarchical clustering to leverage temporal redundancy resulting in 12% sample efficiency.</li>
-            <li>Adapted Hoeffding’s Inequality to facilitate aggregate query processing by on average 90x.</li>
-            <li>Modified Markov’s Inequality to boost retrieval query processing by on average 150x.</li>
-          </ul>
-        </li>
-        <li>AMOEBA: Automated Recovery from Domain Drift (1st Co-Author - Under Review at VLDB)
-          <ul>
-            <li>Researched in collaboration with Adobe Research.</li>
-            <li>Developed novel unsupervised domain adaptation method for object detection increasing drift recovery speed by 4x compared to state-of-the-art methods.</li>
-            <li>Adapted information theory and utilized Student’s t-test to improve drift detection speeds by 10x.</li>
-          </ul>
-        </li>
-        <li>COURSE PROJECTS:
-          <ul>
-            <li>Applying Meta-Learning with Deep RL (A2C) for Starcraft Mini-games</li>
-            <li>Using affinity coding (unsupervised deep learning) to label video datasets</li>
-          </ul>
-        </li>
-        <li>Teaching Assistant - Data Analytics; Advanced Programming Technique; Database Systems</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Internship at Kakaobrain, South Korea (April 2018 — July 2018)</h2>
-      <p>Pertinent Skills: Python, Tensorflow, object detection, deep learning</p>
-      <p>Kakaobrain is the A.I. subsidiary company of Kakao, the 5th biggest company in South Korea.</p>
-      <ul>
-        <li>Improved face detection over SSD by on average 2.9%.</li>
-        <li>Optimizations include changing anchor sizes and aspect ratios, using lower layers for box proposals, and balancing true and false labels via max-out background labels.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Research Assistant at Advanced Agents Lab, Pittsburgh, PA (Jan. 2017 — Mar. 2018)</h2>
-      <p>Pertinent Skills: ROS, C++, Python, path planning, swarm robotics</p>
-      <p>Human Interaction to Control Robotic Swarms (1st Co-Author - Published at IEEE SMC)</p>
-      <ul>
-        <li>Developed in ROS(C++) that consists of 2 components: visual interface and CUDA backend.</li>
-        <li>Utilized Qt5 and librviz to control and visualize swarm robots.</li>
-        <li>Implemented parallel A* algorithm optimized for CUDA which executes 300x faster than serial A*.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>Internship at Charles River Development, Burlington, MA (June 2015 - Aug. 2015)</h2>
-      <p>Pertinent Skills: Java, Sprints, SQL, Excel</p>
-      <ul>
-        <li>Implemented changes from backend to frontend regarding updates to a new portfolio risk calculation concept called exponential decay.</li>
-      </ul>
-    </div>
-    <footer>
-      <p>&copy; 2023 Jaeho Bang. All rights reserved.</p>
-    </footer>
   </div>
 </body>
 </html>

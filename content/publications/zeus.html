@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Zeus: Efficiently Localizing Actions in Videos Using Reinforcement Learning</title>
+  <link rel="stylesheet" href="../css/homepage.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Zeus: Efficiently Localizing Actions in Videos Using Reinforcement Learning</h1>
+    <p><strong>Short Description:</strong> Zeus proposes a reinforcement learning-based framework for efficiently localizing actions in long videos. The method significantly reduces computational cost while maintaining high accuracy, making it suitable for large-scale video understanding and retrieval tasks.</p>
+    <a href="https://dl.acm.org/doi/10.1145/3514221.3526181">Read the full paper</a>
+    <hr>
+    <h2>Action Localization in Videos</h2>
+    <p>Zeus is a video analytics system designed to efficiently detect and localize actions in videos using deep reinforcement learning.</p>
+    <ul>
+      <li>Action localization involves identifying the start and end points of actions in videos and classifying them into action classes.</li>
+      <li>Traditional video analytics systems struggle with complex actions that span multiple frames and require significant computational resources.</li>
+      <li>Zeus outperforms state-of-the-art techniques by up to 22.1× and 4.7× in query processing efficiency.</li>
+      <li>The system consistently meets user-specified accuracy targets across various action queries.</li>
+    </ul>
+    <h3>Challenges in Action Query Processing</h3>
+    <ul>
+      <li>Task complexity arises from the intricate interactions between objects in videos, making it difficult to detect and localize actions.</li>
+      <li>Computational complexity is a concern as deep neural networks, like R3D, are resource-intensive, processing only 2 frames per second on a CPU.</li>
+      <li>Accuracy targets are crucial, as existing methods struggle to meet user-defined accuracy levels due to their inability to capture temporal context effectively.</li>
+    </ul>
+    <h3>Zeus System Architecture and Approach</h3>
+    <ul>
+      <li>Zeus employs a novel architecture that utilizes adaptive input segments to enhance action query processing.</li>
+      <li>The system uses an Adaptive Proxy Feature Generator (APFG) to create latent features from video segments, allowing for efficient classification and selection of subsequent segments.</li>
+      <li>Zeus adapts input configurations based on three dimensions: sampling rate, segment length, and resolution.</li>
+      <li>The reinforcement learning agent in Zeus optimizes these configurations to balance accuracy and processing speed.</li>
+    </ul>
+    <h3>Reinforcement Learning for Configuration Optimization</h3>
+    <ul>
+      <li>Zeus formulates the selection of input configurations as a reinforcement learning problem to improve query performance.</li>
+      <li>The RL agent learns to choose optimal configurations at each time step, maximizing throughput while satisfying accuracy constraints.</li>
+      <li>The system incorporates an accuracy-aware aggregate reward function to guide the training of the RL agent.</li>
+      <li>This approach allows Zeus to maintain fine-grained control over accuracy and adapt to multiple configurations effectively.</li>
+    </ul>
+    <h3>Evaluation and Performance Metrics</h3>
+    <ul>
+      <li>Zeus has been evaluated on multiple datasets, demonstrating significant improvements over existing methods.</li>
+      <li>The system consistently meets user-specified accuracy targets while processing action queries efficiently.</li>
+      <li>Zeus's performance is quantified through metrics such as throughput (frames per second) and accuracy (F1-score).</li>
+      <li>The architecture allows for processing of video segments with varying configurations, enhancing flexibility and efficiency in action localization tasks.</li>
+    </ul>
+    <h3>Action Processing Framework and Local Reward Allocation</h3>
+    <ul>
+      <li>The APFG generates proxy features for the RL agent's next state.</li>
+      <li>The agent aims to minimize query processing time while meeting accuracy requirements.</li>
+      <li>Local reward function rewards faster configurations and penalizes lower accuracy configurations.</li>
+      <li>The reward function is designed to prioritize reducing false negatives over performance.</li>
+      <li>The agent checks for action frames in a local segment window to assign rewards.</li>
+    </ul>
+    <h3>Aggregate Reward Allocation and Global Accuracy</h3>
+    <ul>
+      <li>The RL agent is trained to minimize query execution time while adhering to accuracy constraints.</li>
+      <li>Aggregate rewards are calculated after processing a predetermined window of frames.</li>
+      <li>The updated reward function assigns rewards based on the accuracy achieved within the window.</li>
+      <li>If the target accuracy is met, rewards increase as achieved accuracy approaches the target.</li>
+      <li>Penalties are assigned for accuracy deficits, ensuring the agent learns to optimize performance.</li>
+    </ul>
+    <h3>Implementation Details of Zeus</h3>
+    <ul>
+      <li>APFG is trained using segments from videos with binary labels for action classes.</li>
+      <li>A single R3D model is used to generate ProxyFeatures for various configurations.</li>
+      <li>The RL agent is trained using the DQN algorithm with an experience replay buffer.</li>
+      <li>Preprocessing steps are employed to accelerate RL training by generating feature vectors in advance.</li>
+      <li>The system is implemented in Python using PyTorch and OpenAI Gym for simulation.</li>
+    </ul>
+    <h3>Evaluation of Zeus Performance</h3>
+    <ul>
+      <li>Zeus executes queries up to 4.7× faster than the baseline (Zeus-Sliding) at a given target accuracy.</li>
+      <li>It achieves 8.3× higher throughput and 0.25 points higher F1 score on average compared to existing VDBMSs.</li>
+      <li>Zeus consistently meets user-specified accuracy targets while improving throughput.</li>
+      <li>The RL agent can detect multiple similar actions and adapt to different datasets effectively.</li>
+    </ul>
+    <h3>Experimental Setup and Dataset Characteristics</h3>
+    <ul>
+      <li>Six queries are evaluated across three action localization datasets: Thumos14, ActivityNet, and BDD100K.</li>
+      <li>BDD100K has a low action percentage (7.03%) and shorter average action lengths compared to others.</li>
+      <li>The datasets vary in action density and average action length, impacting the performance of different methods.</li>
+      <li>Configuration statistics detail available resolutions, segment lengths, and maximum accuracy for each dataset.</li>
+    </ul>
+    <h3>End-to-End Comparison of Methods</h3>
+    <ul>
+      <li>Zeus-RL is 3.4× faster than Zeus-Sliding at a given target accuracy.</li>
+      <li>Zeus-RL achieves accuracy closest to the target while efficiently using excess accuracy to improve throughput.</li>
+      <li>Zeus-Heuristic shows variable performance based on action percentage in videos, leading to lower throughput in high-action queries.</li>
+      <li>Segment-PP and Frame-PP perform poorly on complex action classes, resulting in low accuracy and throughput.</li>
+    </ul>
+    <h3>Knob Selection and Impact on Throughput</h3>
+    <ul>
+      <li>Disabling the Sampling Rate, Segment Length, and Resolution knobs significantly reduces throughput by 62%, 51%, and 36%, respectively.</li>
+      <li>The Sampling Rate and Segment Length knobs are crucial for reducing the number of APFG invocations.</li>
+      <li>The impact of APFG invocation time is less significant due to the lack of input batching.</li>
+    </ul>
+    <h3>Practicality and Multi-Class Training of Zeus</h3>
+    <ul>
+      <li>Zeus-RL effectively trains on multiple action classes, achieving the best accuracy-performance trade-off.</li>
+      <li>The model trained on one action class can be used for similar classes, providing decent throughput with minimal accuracy loss.</li>
+      <li>Cross-model inference shows that the RL agent can adapt to different action classes using similar feature vectors.</li>
+    </ul>
+    <h3>Domain Adaptation and Generalization of Zeus</h3>
+    <ul>
+      <li>Zeus-RL maintains advantages over baselines when tested on different datasets, despite a slight accuracy drop (∼2.5%).</li>
+      <li>The accuracy drop is more pronounced for complex actions and varies based on dataset characteristics.</li>
+      <li>Zeus-RL provides comparable accuracy to the most accurate baseline while achieving better performance.</li>
+    </ul>
+    <h3>Training Costs and Efficiency of Zeus</h3>
+    <ul>
+      <li>The APFG training cost is consistent across methods, while Zeus-RL incurs additional costs for RL training.</li>
+      <li>Zeus-RL's total training time is 35% more than Zeus-Sliding, but it offers faster inference.</li>
+      <li>Zeus-Heuristic requires manual rule construction, limiting its practical applicability compared to Zeus-RL.</li>
+    </ul>
+    <h3>Configuration Distribution and Optimization</h3>
+    <ul>
+      <li>Zeus-RL uses a combination of configurations across queries, while Zeus-Heuristic often relies on a single configuration.</li>
+      <li>Zeus-RL processes a higher percentage of frames using faster configurations, optimizing throughput.</li>
+      <li>The resolution split analysis shows that Zeus-RL efficiently balances low and high-resolution processing based on action percentages.</li>
+    </ul>
+  </div>
+</body>
+</html>
