@@ -7,47 +7,61 @@
     <link rel="stylesheet" href="content/css/homepage.css">
   </head>
   <body>
-    <div class="main-container">
-      <h1>About Me</h1>
+    <div style="display: flex; max-width: 900px; margin: 40px auto;">
+      <nav style="width: 200px; flex-shrink: 0; margin-right: 32px;">
+        <div class="card" style="position: sticky; top: 40px;">
+          <h3 style="margin-top:0;">Table of Contents</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#experiences">Experiences</a></li>
+            <li><a href="#interests">Interests</a></li>
+            <li><a href="#blogspaces">Blog Spaces</a></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="main-container" style="flex:1; padding-top:40px;">
+      <h1 id="about">About Me</h1>
       <img class="profile-pic" src="images/profile_pic.jpeg" alt="Jaeho Bang" width="300" height="400">
       <div class="card">
-        <p>Hi, my name is Jaeho Bang and I'm an <strong>AI Compiler Engineer</strong> during the day, <strong>Researcher</strong> during any other time.</p>
-        <p>I've always been passionate about <strong>Artificial Intelligence</strong>.</p>
-        <p>As much as I like Artificial Intelligence, I also enjoy exploring the world of <strong>investing</strong> and learning about new investment strategies.</p>
-        <p>When I'm not working or investing, you can usually find me on the <strong>tennis court</strong>. I've been playing tennis for many years and it's one of my favorite ways to stay active and relieve stress.</p>
-        <p>The purpose of this site is two-fold: <br>
-          <ol>
-            <li>To share who I am and my professional experiences.</li>
-            <li>To log and share my findings in <strong>AI</strong> and <strong>investing</strong> with others :)</li>
-          </ol>
-        </p>
+        <p>Hello! I'm Jaeho Bang, an <strong>AI Compiler Engineer</strong> by profession and a <strong>Researcher</strong> at heart. My passion for <strong>Artificial Intelligence</strong> has shaped both my career and my curiosity.</p>
+        <p>Beyond AI, I have a deep interest in <strong>investing</strong> and enjoy exploring new investment strategies. I believe that learning about finance and markets is a lifelong journey, much like technology itself.</p>
+        <p>The purpose of this site is twofold:</p>
+        <ol>
+          <li>To share my story, background, and professional experiences.</li>
+          <li>To document and share my insights and discoveries in <strong>AI</strong> and <strong>investing</strong> with others.</li>
+        </ol>
       </div>
 
-      <h2>Experiences</h2>
+      <h2 id="experiences">Experiences</h2>
       <div class="card">
-        <p>I studied <strong>Computer Science</strong> in graduate school (undergone PhD program for 4.5 years but didn't finish), and <strong>Electrical and Computer Engineering / Robotics</strong> during undergraduate and master's.</p>
-        <p>You can find an extended list of my education and experiences <a href="content/resume.html">here</a>.</p>
+        <p>I pursued my graduate studies in <strong>Computer Science</strong> at <strong>Georgia Institute of Technology</strong>, spending 4.5 years in a PhD program. My undergraduate and master's degrees are in <strong>Electrical and Computer Engineering / Robotics</strong> from <strong>Carnegie Mellon University</strong>.</p>
+        <p>For a detailed overview of my education and experience, see my <a href="content/resume.html">resume</a>.</p>
       </div>
 
-      <h2>Interests</h2>
-      <h3>Questions that Interest Me</h3>
+      <h2 id="interests">Interests</h2>
+      <h3>AI</h3>
       <div class="card">
         <ul>
-          <li>What is the neural network architecture and training method of ChatGPT and why is its performance such a significant boost compared to other state-of-the-art?</li>
-          <li>With the advent of ChatGPT and other GPT variations, what type of skills should we humans develop from today and onwards?</li>
-          <li>Why is it so hard to beat the performance of index funds? What type of strategies, based on historical data, can we use?</li>
-          <li>The Feds have hiked interest rates and now is 5%. What are the possible next steps that the Feds will take? What strategies should we investors use to maximize gain / minimize loss?</li>
-          <li>Which companies are working on interesting problems and yet making profit?</li>
+          <li>What is the neural network architecture and training method behind ChatGPT, and why does it outperform other state-of-the-art models?</li>
+          <li>With the rise of ChatGPT and similar AI tools, what skills should we, as humans, focus on developing for the future?</li>
+          <li>Which companies are tackling interesting problems while remaining profitable?</li>
         </ul>
-        <p>Yes, you guessed it. My interests are <strong>AI</strong> and <strong>Investing</strong>.</p>
+      </div>
+      <h3>Finance</h3>
+      <div class="card">
+        <ul>
+          <li>Why is it so challenging to outperform index funds? What strategies, based on historical data, might actually work?</li>
+          <li>With the Federal Reserve raising interest rates to 5%, what are the possible next steps, and how should investors adapt to maximize gains and minimize losses?</li>
+        </ul>
       </div>
 
-      <h2>Blog Spaces</h2>
+      <h2 id="blogspaces">Blog Spaces</h2>
       <div class="card">
         <ul>
           <li><a href="content/ai/ai_main.html">Artificial Intelligence</a></li>
           <li><a href="content/investing/investing_main.html">Investing</a></li>
         </ul>
+      </div>
       </div>
     </div>
   </body>
